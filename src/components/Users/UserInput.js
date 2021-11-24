@@ -1,14 +1,15 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
+import './UserInput.css';
 
 const UserInput = (props) => {
 	const [enteredName, setEnteredName] = useState();
 	const [enteredAge, setEnteredAge] = useState();
 
-  const onChangeNameHandler = (event) => {
+	const onChangeNameHandler = (event) => {
 		setEnteredName(event.target.value);
 	}
 
-  const onChangeAgeHandler = (event) => {
+	const onChangeAgeHandler = (event) => {
 		setEnteredAge(event.target.value);
 	}
 
@@ -20,17 +21,19 @@ const UserInput = (props) => {
 	}
 
 	return (
-    <form onSubmit={ formSubmitHandler }>			
+		<form onSubmit={formSubmitHandler}>
 			<div>
-				<label>Username</label>
+				<label>Username
 				<input type="text" name="name" value={enteredName} onChange={onChangeNameHandler} />
+        </label>
 			</div>
 			<div>
-				<label>Age (Years)</label>
-				<input type="text" name="age" value={enteredAge} onChange={onChangeAgeHandler}/>
+				<label>Age (Years)
+				<input type="text" name="age" value={enteredAge} onChange={onChangeAgeHandler} />
+        </label>
 			</div>
 			<div>
-      	<button type="submit">Add User</button>
+				<button type="submit">Add User</button>
 			</div>
 		</form>
 	)
